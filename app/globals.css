@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -23,4 +26,73 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* page background + subtle hex overlay helper classes */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+.bg-peach {
+  background: linear-gradient(90deg, #ffe9e2 0%, #fbdad1 100%);
+}
+
+/* pill shadow for navbar/search */
+.pill {
+  box-shadow: 0 10px 30px rgba(241, 124, 94, 0.12);
+}
+
+/* gradient button used in search */
+.btn-gradient {
+  background: linear-gradient(90deg, #ff7a2f 0%, #ff4d7e 100%);
+}
+
+.nav-pill {
+  @apply hidden md:flex items-center gap-6 rounded-full bg-white;
+  /* Tailwind apply used for consistency */
+
+  /* custom width/height or padding overrides */
+  margin-top: 20;
+  padding: 0.75rem 3rem; /* same as py-3 px-12 */
+  width: 1150px; /* force min width */
+  height: 70px; /* fixed height */
+  margin-right: 30;
+  gap: 4.5rem;
+  justify-content: center;
+}
+
+.title-text {
+  color: #171717;
+  font-size: 30px;
+}
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease-in-out;
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 102, 0, 0.15) 0%,
+    rgba(255, 102, 0, 0) 80%
+  );
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.card-hover:hover::before {
+  width: 400%;
+  height: 400%;
+  opacity: 1;
 }
