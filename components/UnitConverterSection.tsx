@@ -1,4 +1,5 @@
 import { Ruler, Weight, FlaskConical, Square } from 'lucide-react';
+import Link from 'next/link';
 
 export default function UnitConverters() {
   const tools = [
@@ -34,20 +35,19 @@ export default function UnitConverters() {
 
         <div className="w-300 h-56 mt-12 ml-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {tools.map((tool, idx) => (
-            <div
-              key={idx}
-              className="relative p-6 rounded-2xl border border-dashed border-gray-200 shadow-sm hover:shadow-md transition text-left card-hover"
-            >
-              <div
-                className={`w-16 h-16 flex items-center justify-center rounded-full ${tool.bg}`}
-              >
-                {tool.icon}
+            <Link key={idx} href="/converter">
+              <div className="relative p-6 rounded-2xl border border-dashed border-gray-200 shadow-sm hover:shadow-md transition text-left card-hover min-h-[220px]">
+                <div
+                  className={`w-16 h-16 flex items-center justify-center rounded-full ${tool.bg}`}
+                >
+                  {tool.icon}
+                </div>
+                <h3 className="mt-6 text-lg font-semibold text-black">
+                  {tool.title}
+                </h3>
+                <p className="mt-2 text-gray-500 text-sm">{tool.description}</p>
               </div>
-              <h3 className="mt-6 text-lg font-semibold text-black">
-                {tool.title}
-              </h3>
-              <p className="mt-2 text-gray-500 text-sm">{tool.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

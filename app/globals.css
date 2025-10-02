@@ -36,7 +36,7 @@ body,
 }
 
 .bg-peach {
-  background: linear-gradient(90deg, #ffe9e2 0%, #fbdad1 100%);
+  background-color: #fcf0e7;
 }
 
 /* pill shadow for navbar/search */
@@ -95,4 +95,13 @@ body,
   width: 400%;
   height: 400%;
   opacity: 1;
+}
+.rounded-card {
+  background-color: #f8f2f3;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* or add more bottom padding */
+  box-sizing: border-box;
+  min-height: 700px; /* ✅ Add this */
 }

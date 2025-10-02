@@ -3,7 +3,6 @@ import './globals.css';
 import { ReactNode } from 'react';
 import Navbar from '../components/Navbar';
 import FloatingBot from '../components/FloatingBot';
-import UnitConverters from '../components/UnitConverterSection';
 
 export const metadata = {
   title: 'CloudZenia Tools',
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               viewBox="0 0 1200 600"
               preserveAspectRatio="none"
             >
-              {/* very faint hex pattern — you can replace with a pattern SVG */}
               <defs>
                 <pattern
                   id="hex"
@@ -43,13 +41,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </svg>
           </div>
 
+          {/* Global Navbar */}
           <Navbar />
-          <main className="container mx-auto px-6 py-24">{children}</main>
+
+          {/* Page Content */}
+          <main className="container mx-auto">{children}</main>
+
+          {/* Global Floating Bot */}
           <FloatingBot />
         </div>
-        <section className="py-20 bg-white">
-          <UnitConverters></UnitConverters>
-        </section>
       </body>
     </html>
   );
