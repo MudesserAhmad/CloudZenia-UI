@@ -50,17 +50,40 @@ body,
 }
 
 .nav-pill {
-  @apply hidden md:flex items-center gap-6 rounded-full bg-white;
-  /* Tailwind apply used for consistency */
+  @apply flex flex-wrap items-center justify-center gap-3 md:gap-6 rounded-full bg-white 
+  py-2 md:py-3 px-4 md:px-12 shadow-sm transition-all duration-200;
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
+}
 
-  /* custom width/height or padding overrides */
-  margin-top: 20;
-  padding: 0.75rem 3rem; /* same as py-3 px-12 */
-  width: 1150px; /* force min width */
-  height: 70px; /* fixed height */
-  margin-right: 30;
-  gap: 4.5rem;
-  justify-content: center;
+.nav-link {
+  @apply text-black hover:text-orange-500 transition-colors duration-200;
+}
+
+/* Handle smaller screens (tablet and mobile) */
+@media (max-width: 768px) {
+  .nav-pill {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem; /* smaller text */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-pill {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
 }
 
 .title-text {

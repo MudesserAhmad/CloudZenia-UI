@@ -3,13 +3,17 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <header className="py-6">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+    <header className="py-4 md:py-6">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between flex-wrap">
+          {/* Logo + Title */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 md:gap-3 mb-3 md:mb-0"
+          >
             <svg
-              width="42"
-              height="42"
+              width="36"
+              height="36"
               viewBox="0 0 100 100"
               className="rounded-full"
             >
@@ -20,20 +24,10 @@ export default function Navbar() {
                 </linearGradient>
               </defs>
               <circle cx="50" cy="50" r="48" fill="url(#g1)" />
-              <text
-                x="50"
-                y="58"
-                fontSize="40"
-                textAnchor="middle"
-                fill="white"
-                fontFamily="Poppins"
-              ></text>
             </svg>
             <div>
-              <div className="title-text" style={{ fontWeight: 'bold' }}>
-                CloudZenia
-              </div>
-              <div style={{ fontSize: '12px', color: 'black' }}>
+              <div className="font-bold text-lg md:text-xl">CloudZenia</div>
+              <div className="text-[10px] md:text-[12px] text-black">
                 <span style={{ color: 'red', marginRight: '4px' }}>&lt;</span>
                 Powering your cloud journey
                 <span style={{ color: 'red', marginLeft: '4px' }}>/&gt;</span>
@@ -41,69 +35,46 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <nav>
-            <ul className="nav-pill ">
+          {/* Navigation */}
+          <nav className="w-full md:w-auto">
+            <ul className="nav-pill flex flex-wrap justify-center md:justify-between text-sm md:text-base font-bold">
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   Services
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   Industry
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   Programs
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-orange-500 text-[16px] leading-6 font-bold"
-                >
+                <Link href="/" className="text-orange-500 nav-link">
                   Resources
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="text-black text-base leading-6 font-bold"
-                >
+                <Link href="/" className="nav-link">
                   Pricing
                 </Link>
               </li>

@@ -1,4 +1,3 @@
-// app/layout.tsx
 import './globals.css';
 import { ReactNode } from 'react';
 import Navbar from '../components/Navbar';
@@ -12,10 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-white min-h-screen font-sans">
-        <div className="bg-peach relative min-h-screen overflow-hidden">
-          {/* subtle hex SVG overlay */}
-          <div className="pointer-events-none absolute inset-0 -z-10 opacity-8">
+      <body className="bg-white min-h-screen font-sans text-gray-900 antialiased">
+        <div className="bg-peach relative min-h-screen overflow-hidden flex flex-col">
+          {/* Subtle hex pattern background */}
+          <div className="pointer-events-none absolute inset-0 -z-10 opacity-10">
             <svg
               width="100%"
               height="100%"
@@ -37,18 +36,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   />
                 </pattern>
               </defs>
-              <rect width="100%" height="100%" fill="url(#hex)"></rect>
+              <rect width="100%" height="100%" fill="url(#hex)" />
             </svg>
           </div>
 
-          {/* Global Navbar */}
-          <Navbar />
+          {/* Navbar - fixed and responsive */}
+          <header className="sticky top-0 z-50 w-full bg-peach/80 backdrop-blur-md border-b border-white/20">
+            <Navbar />
+          </header>
 
           {/* Page Content */}
-          <main className="container mx-auto">{children}</main>
+          <main className="flex-1 w-full px-4 sm:px-6 lg:px-12 py-10 sm:py-16">
+            <div className="max-w-7xl mx-auto">{children}</div>
+          </main>
 
-          {/* Global Floating Bot */}
-          <FloatingBot />
+          {/* Floating Chatbot */}
+          <div className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8">
+            <FloatingBot />
+          </div>
         </div>
       </body>
     </html>
