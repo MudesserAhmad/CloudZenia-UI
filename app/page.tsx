@@ -15,7 +15,7 @@ export default function Home() {
         cost-efficiency with CloudZenia.
       </p>
 
-      <div className="mt-16 w-full sm:w-2/3 md:w-1/2">
+      <div className="mt-8 sm:mt-12 md:mt-16 w-full px-4 sm:px-6 md:px-0 sm:w-4/5 md:w-2/3 lg:w-1/2 max-w-xl mx-auto">
         <SearchPill />
       </div>
       <div style={{ marginTop: '280px', width: '100%' }}>
